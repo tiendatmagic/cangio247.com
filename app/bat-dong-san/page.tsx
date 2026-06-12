@@ -59,7 +59,7 @@ export default function BatDongSan() {
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const paginatedData = filteredData.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   return (
@@ -260,7 +260,9 @@ export default function BatDongSan() {
                 {totalPages > 1 && (
                   <div className="flex items-center justify-center gap-2 pt-6">
                     <button
-                      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                      onClick={() =>
+                        setCurrentPage((prev) => Math.max(prev - 1, 1))
+                      }
                       disabled={currentPage === 1}
                       className={`h-10 px-4 rounded-xl border flex items-center justify-center font-bold text-xs transition-all cursor-pointer font-display ${
                         currentPage === 1
@@ -270,21 +272,25 @@ export default function BatDongSan() {
                     >
                       Trước
                     </button>
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                      <button
-                        key={page}
-                        onClick={() => setCurrentPage(page)}
-                        className={`size-10 rounded-xl flex items-center justify-center font-bold text-xs transition-all cursor-pointer font-display ${
-                          currentPage === page
-                            ? "bg-primary text-white border-primary shadow-sm shadow-primary/20"
-                            : "bg-white text-zinc-700 border-zinc-200 hover:bg-primary/5 hover:text-primary hover:border-primary/30"
-                        }`}
-                      >
-                        {page}
-                      </button>
-                    ))}
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                      (page) => (
+                        <button
+                          key={page}
+                          onClick={() => setCurrentPage(page)}
+                          className={`size-10 rounded-xl flex items-center justify-center font-bold text-xs transition-all cursor-pointer font-display ${
+                            currentPage === page
+                              ? "bg-primary text-white border-primary shadow-sm shadow-primary/20"
+                              : "bg-white text-zinc-700 border-zinc-200 hover:bg-primary/5 hover:text-primary hover:border-primary/30"
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      ),
+                    )}
                     <button
-                      onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                      onClick={() =>
+                        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                      }
                       disabled={currentPage === totalPages}
                       className={`h-10 px-4 rounded-xl border flex items-center justify-center font-bold text-xs transition-all cursor-pointer font-display ${
                         currentPage === totalPages
@@ -393,7 +399,7 @@ export default function BatDongSan() {
             </div>
 
             {/* Box Hỗ trợ đăng tin nhanh - Nền gương mờ */}
-            <div className="glass-premium rounded-[2rem] p-6 shadow-md space-y-4 relative overflow-hidden text-zinc-900 bg-white/75 border border-white/50">
+            <div className="glass-premium rounded-[2rem] p-6 shadow-[0_15px_30px_-5px_rgba(24,103,255,0.02)] space-y-4 relative overflow-hidden text-zinc-900 bg-white/75 border border-white/50">
               <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="glow-orb glow-cyan w-48 h-48 -right-10 -bottom-10 opacity-15 animate-float" />
               </div>

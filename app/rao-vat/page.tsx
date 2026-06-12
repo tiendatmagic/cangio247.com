@@ -162,7 +162,7 @@ export default function RaoVat() {
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const paginatedData = filteredData.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   return (
@@ -292,7 +292,7 @@ export default function RaoVat() {
             </div>
 
             {/* Mẹo đăng tin an toàn Nền gương mờ */}
-            <div className="glass-premium text-zinc-900 rounded-[2rem] p-5 shadow-sm space-y-3 relative overflow-hidden bg-white/75 border border-white/50">
+            <div className="glass-premium text-zinc-900 rounded-[2rem] p-5 shadow-[0_15px_30px_-5px_rgba(24,103,255,0.02)] space-y-3 relative overflow-hidden bg-white/75 border border-white/50">
               <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="glow-orb glow-accent w-32 h-32 -right-5 -bottom-5 opacity-15 animate-float" />
               </div>
@@ -347,7 +347,9 @@ export default function RaoVat() {
                 {totalPages > 1 && (
                   <div className="flex items-center justify-center gap-2 pt-6">
                     <button
-                      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                      onClick={() =>
+                        setCurrentPage((prev) => Math.max(prev - 1, 1))
+                      }
                       disabled={currentPage === 1}
                       className={`h-10 px-4 rounded-xl border flex items-center justify-center font-bold text-xs transition-all cursor-pointer font-display ${
                         currentPage === 1
@@ -357,21 +359,25 @@ export default function RaoVat() {
                     >
                       Trước
                     </button>
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                      <button
-                        key={page}
-                        onClick={() => setCurrentPage(page)}
-                        className={`size-10 rounded-xl flex items-center justify-center font-bold text-xs transition-all cursor-pointer font-display ${
-                          currentPage === page
-                            ? "bg-primary text-white border-primary shadow-sm shadow-primary/20"
-                            : "bg-white text-zinc-700 border-zinc-200 hover:bg-primary/5 hover:text-primary hover:border-primary/30"
-                        }`}
-                      >
-                        {page}
-                      </button>
-                    ))}
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                      (page) => (
+                        <button
+                          key={page}
+                          onClick={() => setCurrentPage(page)}
+                          className={`size-10 rounded-xl flex items-center justify-center font-bold text-xs transition-all cursor-pointer font-display ${
+                            currentPage === page
+                              ? "bg-primary text-white border-primary shadow-sm shadow-primary/20"
+                              : "bg-white text-zinc-700 border-zinc-200 hover:bg-primary/5 hover:text-primary hover:border-primary/30"
+                          }`}
+                        >
+                          {page}
+                        </button>
+                      ),
+                    )}
                     <button
-                      onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                      onClick={() =>
+                        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                      }
                       disabled={currentPage === totalPages}
                       className={`h-10 px-4 rounded-xl border flex items-center justify-center font-bold text-xs transition-all cursor-pointer font-display ${
                         currentPage === totalPages

@@ -67,7 +67,7 @@ export default function LienHe() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 relative z-10 reveal">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Cột Trái (Col 7): Form liên hệ tối giản hiện đại */}
-          <div className="lg:col-span-7 bg-white p-8 rounded-[2rem] border border-zinc-200/80 shadow-[0_15px_30px_-5px_rgba(24,103,255,0.02)] space-y-6 relative z-10">
+          <div className="lg:col-span-7 glass-premium bg-white/75 backdrop-blur-md border border-white/60 p-8 rounded-[2rem] shadow-[0_15px_30px_-5px_rgba(24,103,255,0.02)] space-y-6 relative z-10">
             <div className="space-y-2">
               <span className="text-xs md:text-sm font-black uppercase  text-primary">
                 Gửi tin nhắn
@@ -96,7 +96,7 @@ export default function LienHe() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Nguyễn Văn A"
-                    className="w-full bg-zinc-50/50 border border-zinc-200 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all text-zinc-800"
+                    className="w-full bg-zinc-50/50 border border-zinc-150/80 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all text-zinc-800"
                   />
                 </div>
 
@@ -112,7 +112,7 @@ export default function LienHe() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="0909 123 456"
-                    className="w-full bg-zinc-50/50 border border-zinc-200 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all text-zinc-800"
+                    className="w-full bg-zinc-50/50 border border-zinc-150/80 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all text-zinc-800"
                   />
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function LienHe() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="email@example.com"
-                    className="w-full bg-zinc-50/50 border border-zinc-200 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all text-zinc-800"
+                    className="w-full bg-zinc-50/50 border border-zinc-150/80 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all text-zinc-800"
                   />
                 </div>
 
@@ -143,7 +143,7 @@ export default function LienHe() {
                       name="category"
                       value={formData.category}
                       onChange={handleChange}
-                      className="w-full bg-zinc-50/50 border border-zinc-200 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all appearance-none cursor-pointer text-zinc-800"
+                      className="w-full bg-zinc-50/50 border border-zinc-150/80 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all appearance-none cursor-pointer text-zinc-800"
                     >
                       <option value="bds">Bất động sản Cần Giờ</option>
                       <option value="raovat">Rao vặt tổng hợp</option>
@@ -169,7 +169,7 @@ export default function LienHe() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Nhập chi tiết yêu cầu hỗ trợ hoặc thông tin tin đăng của bạn..."
-                  className="w-full bg-zinc-50/50 border border-zinc-200 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all text-zinc-800"
+                  className="w-full bg-zinc-50/50 border border-zinc-150/80 px-4 py-3 text-sm font-bold rounded-xl focus:outline-none focus:border-primary focus:bg-white transition-all text-zinc-800"
                 ></textarea>
               </div>
 
@@ -212,7 +212,7 @@ export default function LienHe() {
           {/* Cột Phải (Col 5): Thông tin liên lạc & bản đồ nhúng */}
           <div className="lg:col-span-5 space-y-6">
             {/* Box Thông tin */}
-            <div className="bg-white p-6 rounded-[2rem] border border-zinc-200/80 shadow-sm space-y-4 relative z-10">
+            <div className="glass-premium bg-white/75 backdrop-blur-md border border-white/60 p-6 rounded-[2rem] shadow-[0_15px_30px_-5px_rgba(24,103,255,0.02)] space-y-4 relative z-10">
               <h3 className="text-xs md:text-sm font-black uppercase  text-zinc-800 border-b border-zinc-100 pb-2 font-display">
                 Thông tin văn phòng liên hệ
               </h3>
@@ -295,12 +295,12 @@ export default function LienHe() {
             </div>
 
             {/* Bản đồ nhúng Google Map dạng mô phỏng */}
-            <div className="bg-white p-5 rounded-[2rem] border border-zinc-200/80 shadow-sm space-y-3 relative z-10">
+            <div className="glass-premium bg-white/75 backdrop-blur-md border border-white/60 p-5 rounded-[2rem] shadow-[0_15px_30px_-5px_rgba(24,103,255,0.02)] space-y-3 relative z-10">
               <h4 className="text-xs md:text-sm font-black uppercase  text-zinc-800 font-display">
                 Vị trí địa lý văn phòng
               </h4>
 
-              <div className="relative h-64 bg-slate-100 overflow-hidden rounded-xl border border-zinc-200">
+              <div className="relative h-64 bg-slate-100 overflow-hidden rounded-xl border border-zinc-150/80">
                 <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:20px_20px]"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center space-y-3 z-10 bg-zinc-100/50 backdrop-blur-[1px]">
                   <svg
