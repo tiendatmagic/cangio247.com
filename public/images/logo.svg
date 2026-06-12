@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Nền vòng tròn nhẹ hoặc bóng đổ -->
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1867ff" />
+      <stop offset="100%" stop-color="#004cd8" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7a00" />
+      <stop offset="100%" stop-color="#ff5100" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1867ff" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Biểu tượng cánh buồm / Sóng biển / Tòa nhà đại diện Cần Giờ 24/7 -->
+  <g filter="url(#glow)">
+    <!-- Tòa nhà / Tháp (Bất động sản / Phát triển) -->
+    <path d="M25 75 L45 35 L55 35 L50 75 Z" fill="url(#blueGrad)" />
+    <!-- Cánh buồm lớn (Hướng biển / Phát triển vượt bậc) -->
+    <path d="M48 75 C48 50 60 40 75 35 C70 55 60 70 48 75 Z" fill="url(#orangeGrad)" />
+    <!-- Những làn sóng biển / Kế nối 24/7 -->
+    <path d="M20 80 Q50 72 80 80" stroke="url(#blueGrad)" stroke-width="4" stroke-linecap="round" fill="none" />
+    <path d="M30 86 Q50 80 70 86" stroke="url(#orangeGrad)" stroke-width="3" stroke-linecap="round" fill="none" />
+    
+    <!-- Tia sáng 24/7 năng động -->
+    <circle cx="72" cy="28" r="5" fill="#ff7a00" />
+    <path d="M72 18 L72 22M72 34 L72 38M62 28 L66 28M78 28 L82 28" stroke="#ff7a00" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>

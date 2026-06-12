@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  
+  --primary: #006dd0;
+  --primary-hover: #005bb0;
+  --accent: #00d175;
+  --accent-hover: #00b363;
+  
+  --card-bg: #ffffff;
+  --border-color: rgba(0, 109, 208, 0.04);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-card-bg: var(--card-bg);
+  --color-border-custom: var(--border-color);
+  
+  --color-zinc-150: #f1f3f5;
+  --color-zinc-250: #e2e5e9;
+  --color-zinc-450: #94a3b8;
+  --color-zinc-455: #94a3b8;
+  --color-zinc-550: #64748b;
+  --color-zinc-650: #475569;
+  --color-zinc-850: #1e293b;
+  --color-zinc-955: #0f172a;
+  
+  --font-sans: 'Plus Jakarta Sans', var(--font-plus-jakarta-sans), Inter, system-ui, sans-serif;
+  --font-display: 'Be Vietnam Pro', var(--font-be-vietnam-pro), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  
+  --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-glow: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 4px 6px -1px rgba(0, 209, 117, 0.15), 0 2px 4px -1px rgba(0, 209, 117, 0.1);
+  }
+  50% {
+    box-shadow: 0 10px 15px -3px rgba(0, 209, 117, 0.25), 0 4px 6px -2px rgba(0, 209, 117, 0.15);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', var(--font-sans), sans-serif;
+  background-image: radial-gradient(rgba(0, 109, 208, 0.03) 1.5px, transparent 1.5px), radial-gradient(rgba(0, 209, 117, 0.015) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: 'Be Vietnam Pro', var(--font-be-vietnam-pro), system-ui, -apple-system, sans-serif !important;
+}
+
+/* 1. Thẻ gương mờ cao cấp (Glassmorphism) */
+.glass-premium {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* 2. Quầng sáng nền mờ tạo chiều sâu (Glowing Orbs) */
+.glow-orb {
+  position: absolute;
+  filter: blur(110px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.glow-primary {
+  background-color: rgba(0, 109, 208, 0.12);
+}
+.glow-accent {
+  background-color: rgba(0, 209, 117, 0.08);
+}
+.glow-cyan {
+  background-color: rgba(0, 183, 255, 0.07);
+}
+
+/* 3. Hoạt ảnh bồng bềnh nền */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-22px) scale(1.06);
+  }
+}
+@keyframes float-slow-reverse {
+  0%, 100% {
+    transform: translateY(0px) scale(1.06);
+  }
+  50% {
+    transform: translateY(22px) scale(1);
+  }
+}
+.animate-float {
+  animation: float-slow 15s infinite ease-in-out;
+}
+.animate-float-reverse {
+  animation: float-slow-reverse 18s infinite ease-in-out;
+}
+
+/* Shadow phối màu lớn loang rộng */
+.shadow-primary-glow {
+  box-shadow: 0 25px 50px -12px rgba(0, 109, 208, 0.16), 0 12px 24px -16px rgba(0, 109, 208, 0.12);
+}
+
+.shadow-accent-glow {
+  box-shadow: 0 25px 50px -12px rgba(0, 209, 117, 0.18), 0 12px 24px -16px rgba(0, 209, 117, 0.12);
+}
+
+/* Unified card shadow - Thống nhất box shadow toàn bộ card, viền trắng mờ */
+.unified-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 1.25rem; /* rounded-2xl */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 16px -6px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.unified-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 45px -12px rgba(0, 109, 208, 0.16), 0 8px 20px -8px rgba(0, 109, 208, 0.08);
+  border-color: rgba(0, 109, 208, 0.25);
+}
+
+.soft-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 1.25rem; /* rounded-2xl */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 16px -6px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.soft-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 45px -12px rgba(0, 109, 208, 0.16), 0 8px 20px -8px rgba(0, 109, 208, 0.08);
+  border-color: rgba(0, 109, 208, 0.25);
+}
+
+/* Hover Card đổi viền mượt của CanGio247 */
+.glowing-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.glowing-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 16px 36px -12px rgba(0, 109, 208, 0.15);
+}
+
+.glow-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+  opacity: 0;
+}
+
+.glow-btn:hover::after {
+  opacity: 1;
+  left: 125%;
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+.shine-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+}
+.shine-effect:hover::before {
+  left: 150%;
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes hotline-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 109, 208, 0.45), 0 0 0 0 rgba(0, 209, 117, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 109, 208, 0), 0 0 0 20px rgba(0, 209, 117, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 109, 208, 0), 0 0 0 0 rgba(0, 209, 117, 0);
+  }
+}
+.animate-hotline {
+  animation: hotline-pulse 2.2s infinite;
+}
+
+/* Gradient cho button và các thẻ nhấn */
+.bg-btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #4da7ff 100%);
+}
+
+.bg-btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-hover) 0%, #2b8fff 100%);
+}
+
+.bg-btn-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, #22e58c 100%);
+}
+
+.bg-btn-accent:hover {
+  background: linear-gradient(135deg, var(--accent-hover) 0%, #00ca6e 100%);
+}
+
+.bg-btn-phone {
+  background: linear-gradient(135deg, #006dd0 0%, #00d175 100%);
+}
+
+.bg-btn-phone:hover {
+  background: linear-gradient(135deg, #005bb0 0%, #00b363 100%);
+}
+
+/* Tùy biến thanh cuộn ngang mượt mà cho slider */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 109, 208, 0.25);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 109, 208, 0.5);
+}
+
+/* Khai báo trực tiếp các class hoạt ảnh thuần để tương thích 100% với Tailwind v4 và trình duyệt */
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite ease-in-out !important;
+}
+
+.animate-hotline {
+  animation: hotline-pulse 2.2s infinite !important;
+}
+
+/* Hiệu ứng hoạt ảnh cuộn màn hình Scroll Reveal (giống trannhomgiahuy) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), scale 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, opacity, scale;
+}
+
+.reveal.reveal-active {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Biến thể trượt từ trái sang */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, opacity;
+}
+
+.reveal-left.reveal-active {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Biến thể trượt từ phải sang */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, opacity;
+}
+
+.reveal-right.reveal-active {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
